@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abalone Game Board</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+
+      .board-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        height: 600px;
+      }
+
+      .hexagon {
+        position: relative;
+        width: 100%;
+        padding-bottom: 86.6%;
+        background-color: #f1c232;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+      }
+
+      .point {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #333;
+        border-radius: 50%;
+      }
+
+      /* Define positions for points */
+      /* Row 1 */
+      .point-1 {
+        top: 5.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-2 {
+        top: 5.5%;
+        left: 62.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-3 {
+        top: 5.5%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-4 {
+        top: 5.5%;
+        left: 37.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-5 {
+        top: 5.5%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Row 2 */
+      .point-6 {
+        top: 16.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-7 {
+        top: 16.5%;
+        left: 62.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-8 {
+        top: 16.5%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-9 {
+        top: 16.5%;
+        left: 87.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-10 {
+        top: 16.5%;
+        left: 37.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-11 {
+        top: 16.5%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-12 {
+        top: 16.5%;
+        left: 12.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Row 3 */
+      .point-13 {
+        top: 27.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-14 {
+        top: 27.5%;
+        left: 62.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-15 {
+        top: 27.5%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-16 {
+        top: 27.5%;
+        left: 87.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-17 {
+        top: 27.5%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-18 {
+        top: 27.5%;
+        left: 37.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-19 {
+        top: 27.5%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-20 {
+        top: 27.5%;
+        left: 12.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-21 {
+        top: 27.5%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Row 4 */
+      .point-22 {
+        top: 38.5%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-23 {
+        top: 38.5%;
+        left: 12.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-24 {
+        top: 38.5%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Additional rows going inward from outer hex definition... */
+
+      .point-25 {
+        top: 55.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-26 {
+        top: 55.5%;
+        left: 62.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-27 {
+        top: 55.5%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-28 {
+        top: 55.5%;
+        left: 87.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-29 {
+        top: 55.5%;
+        left: 37.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-30 {
+        top: 55.5%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+      }
+
+      .point-31 {
+        top: 55.5%;
+        left: 12.5%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* ... more rows as defined by positioning within the original hex */
+    </style>
+  </head>
+
+  <body>
+    <div class="board-container">
+      <div class="hexagon"></div>
+      <!-- Points for marbles -->
+      <div class="point point-1"></div>
+      <!-- Add more points as per the defined class -->
+      <div class="point point-2"></div>
+      <div class="point point-3"></div>
+      <div class="point point-4"></div>
+      <div class="point point-5"></div>
+      <div class="point point-6"></div>
+      <div class="point point-7"></div>
+      <div class="point point-8"></div>
+      <div class="point point-9"></div>
+      <div class="point point-10"></div>
+      <div class="point point-11"></div>
+      <div class="point point-12"></div>
+      <div class="point point-13"></div>
+      <div class="point point-14"></div>
+      <div class="point point-15"></div>
+      <div class="point point-16"></div>
+      <div class="point point-17"></div>
+      <div class="point point-18"></div>
+      <div class="point point-19"></div>
+      <div class="point point-20"></div>
+      <div class="point point-21"></div>
+      <div class="point point-22"></div>
+      <div class="point point-23"></div>
+      <div class="point point-24"></div>
+      <div class="point point-25"></div>
+      <div class="point point-26"></div>
+      <div class="point point-27"></div>
+      <div class="point point-28"></div>
+      <div class="point point-29"></div>
+      <div class="point point-30"></div>
+      <div class="point point-31"></div>
+    </div>
+  </body>
+</html>

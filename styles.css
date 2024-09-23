@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.board {
+  width: 400px;
+  height: 400px;
+  background-color: #8b4513;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  position: relative;
+  margin: 20px auto;
+}
+
+.piece {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.white {
+  background-color: white;
+}
+.black {
+  background-color: black;
+}
+
+.selected {
+  border: 2px solid yellow;
+  box-shadow: 0 0 10px yellow;
+}
+
+.valid-move {
+  background-color: rgba(0, 255, 0, 0.3);
+  border: 2px solid green;
+}
+
+.status {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.menu {
+  margin-bottom: 20px;
+}
+
+.menu button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.instructions {
+  text-align: left;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.instructions h2 {
+  text-align: center;
+}
